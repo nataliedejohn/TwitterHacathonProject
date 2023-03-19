@@ -20,12 +20,11 @@ def twitter_api_call(search = "?"):
 
     api = tweepy.API(auth)
 
-    public_tweets = api.search_tweets(search)
-    x = 0
+    public_tweets = api.search_tweets(q=search+"?", lang="en")
 
-    while x < 100:
-        public_tweets + (api.search_tweets("poop"))
-        x += 1
+
+
+
 
     columns = ["Time\t", 'User\t', 'Tweet\t']
     data = []

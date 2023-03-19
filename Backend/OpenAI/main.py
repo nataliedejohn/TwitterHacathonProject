@@ -13,7 +13,7 @@ from Backend.TwitterApi.twitter_api import twitter_api_call
 # load values from the .env file if it exists
 #load_dotenv()
 
-tweets = twitter_api_call()
+tweets = twitter_api_call("hello")
 
 
 # configure OpenAI
