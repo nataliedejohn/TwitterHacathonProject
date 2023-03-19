@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenAI Quickstart</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.slidecontainer {
+  width: 80%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #5CACEA;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header">
+      <h1>AMA From Twitter: Blast to the Past</h1>
+      <br>
+      <h3>Choose your time period:</h3>
+    </div>
+  </header>
+
+<form action="/" method="post">
+    <div class="sliderdiv">
+        <span id="rangeValue">1900</span>
+        <input class="range" type="range" value="1950" min="1900" max="2000" name="slider-val"
+               onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)"/>
+        <br/>
+    </div>
+    <script type="text/javascript">
+        function rangeSlide(value) {
+            document.getElementById('rangeValue').innerHTML = value;
+        }
+    </script>
+    <input type="text" name="question" placeholder="Enter a question" required />
+    <input id="submit" type="submit" onclick="document.getElementById('wheel').style.display = 'block';" value="Generate Q&A" />
+  </form>
+  <br/>
+  <img class="wheel" src="{{ url_for('static', filename='wheel.gif') }}"/>
+  {% if result %}
+  <div class="result">{{ result|safe }}</div>
+
+  {% endif %}
+
+</body>
+</html>

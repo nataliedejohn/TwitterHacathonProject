@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53ee0aa5-dee7-417a-af56-51219a95c595" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blog2/app/static/wheel.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog2/app/templates/index2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog2/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog2/app/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog2/app/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/blog2/app/static/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog2/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog2/app/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,10 +45,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/blog2/app/app.py" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/blog2/app/templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\roadk\Downloads\TwitterHackathonProject\blog2\app\templates" />
       <recent name="$PROJECT_DIR$/Backend/TwitterApi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -67,11 +69,16 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\roadk\Downloads\TwitterHackathonProject\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/blog2/app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/blog/openai-quickstart-python" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+<<<<<<< Updated upstream
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/blog2/app/app.py" />
+=======
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/blog/openai-quickstart-python/app.py" />
+>>>>>>> Stashed changes
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />

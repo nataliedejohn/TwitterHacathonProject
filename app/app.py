@@ -13,7 +13,7 @@ openai.api_key = "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"
 def index():
     if request.method == "POST":
         question = request.form["question"]
-        year = request.form["year"]
+        year = request.form["slider-val"]
 
         print(year)
         # errors = get_moderation(question)
