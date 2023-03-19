@@ -1,19 +1,31 @@
 import os
 import openai
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from colorama import Fore, Back, Style
 
+from Backend.TwitterApi.twitter_api import twitter_api_call
+
+#from Backend.TwitterApi.twitter_api import hello
+
+
+#hello()
+
 # load values from the .env file if it exists
-load_dotenv()
+#load_dotenv()
+
+tweets = twitter_api_call(search = "?")
+
 
 # configure OpenAI
-openai.api_key = "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"
+openai.api_key = "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"
 
-INSTRUCTIONS = """You are a regular person from the 1950's answering every question if you had knowledge only limited to the fifties. Only answer questions as a 1950's person that has no knoledge of the present. Only answer questions with 1950's rhetoric."
-Please aim to be as helpful, creative, and friendly as possible in all of your responses.
-Do not use any external URLs in your answers. Do not refer to any blogs in your answers.
-Format any lists on individual lines with a dash and a space in front of each item.
-"""
+INSTRUCTIONS = """You are a regular person from the 1950's answering every question if you had knowledge only limited 
+to the fifties. Only answer questions as a 1950's person that has no knowledge of the present. Only answer questions 
+with 1950's rhetoric. For example if asked "what is the internet" respond with "I am unsure of such things". 
+Additionally, talk only of information as of the year 1950 and no later, for any information beyond the scope anser 
+with "I am a person of the 1950's and know not of things past my time". Please aim to be as helpful, creative, 
+and friendly as possible in all of your responses. Do not use any external URLs in your answers. Do not refer to any 
+blogs in your answers. Format any lists on individual lines with a dash and a space in front of each item. """
 
 TEMPERATURE = 0.5
 MAX_TOKENS = 500
