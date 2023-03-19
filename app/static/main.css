@@ -108,3 +108,9 @@ input[type="submit"] {
 .sliderdiv{
     vertical-align: middle;
 }
+
+.wheel{
+  border-radius: 10px;
+  width: 33%;
+  display: none;
+}

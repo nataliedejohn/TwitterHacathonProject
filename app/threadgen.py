@@ -28,12 +28,13 @@ def generate_prompt(question, year):
 
 def gpt_thread(question, year, array):
     print("starting thread")
-    array.append("Question: " +question+ "\n<br/>Answer:" + openai.Completion.create(
-        model="text-davinci-003",
-        prompt=generate_prompt(question, year),
-        temperature=0.6,
-        max_tokens=100
-    ).choices[0].text)
+    array.append("Question: " +question+ "\n<br/>Answer:"+openai.Completion.create(
+            model="text-davinci-003",
+            prompt=generate_prompt(question, year),
+            temperature=0.6,
+            max_tokens=100
+        ).choices[0].text)
+    print("finished thread")
 
 def gpt(questions, year):
     array = []

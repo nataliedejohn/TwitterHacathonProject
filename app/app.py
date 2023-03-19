@@ -6,7 +6,7 @@ from threadgen import *
 
 app = Flask(__name__)
 #load_dotenv()
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route("/", methods=("GET", "POST"))
@@ -23,10 +23,10 @@ def index():
         #     return render_template("index.html", result="Sorry, I cannot answer that question.")
         twitterList = twitter_api_call(search=question)
 
-        print(twitterList[0:5])
+        print(twitterList[0:4])
 
         response = ""
-        for item in gpt(twitterList[0:5], year):
+        for item in gpt(twitterList[0:4], year):
             response = response + item + "<br/> <br/> <br/>"
 
         print(response)
