@@ -4,7 +4,7 @@ import tweepy
 import configparser
 
 
-def twitter_api_call(search = "?"):
+def twitter_api_call(search = ""):
 
     config = configparser.ConfigParser()
     config.read('config.ini')
@@ -22,16 +22,12 @@ def twitter_api_call(search = "?"):
 
     public_tweets = api.search_tweets(q=search+"?", lang="en")
 
-
-
-
-
     columns = ["Time\t", 'User\t', 'Tweet\t']
     data = []
     for tweet in public_tweets:
         data.append([tweet.created_at, tweet.user.screen_name, tweet.text])
 
-    print(data)
+    print("data: {data}".format(data=data))
 
     df = pd.DataFrame(data, columns=columns)
 
@@ -39,6 +35,3 @@ def twitter_api_call(search = "?"):
 
     df.to_csv('tweets.csv')
     return data
-
-
-public_tweets = twitter_api_call("poop")

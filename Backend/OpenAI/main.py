@@ -1,7 +1,7 @@
 import os
 import openai
 #from dotenv import load_dotenv
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 
 from Backend.TwitterApi.twitter_api import twitter_api_call
 
