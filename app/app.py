@@ -6,7 +6,7 @@ from threadgen import *
 
 app = Flask(__name__)
 #load_dotenv()
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route("/", methods=("GET", "POST"))
@@ -14,25 +14,37 @@ def index():
     if request.method == "POST":
         question = request.form["question"]
         year = request.form["slider-val"]
+        sortby = request.form["sortby"]
 
+        print(sortby)
         print(year)
         # errors = get_moderation(question)
         # if errors:
         #     for error in errors:
         #         print(error)
         #     return render_template("index.html", result="Sorry, I cannot answer that question.")
-        twitterList = twitter_api_call(search=question)
+        twitterList = twitter_api_call(search=question, mode=sortby)
 
-        print(twitterList[0:4])
+        print(twitterList[0:3])
 
         response = ""
-        for item in gpt(twitterList[0:4], year):
+        for item in gpt(twitterList[0:3], year):
             response = response + item + "<br/> <br/> <br/>"
 
         print(response)
-        return redirect(url_for("index", result=response))
+        return redirect(url_for("index", year=year, question=question, sortby=sortby, result=response))
     result = request.args.get("result")
-    return render_template("index.html", result=result)
+    year = request.args.get("year")
+    if(year == None):
+        year = 1950
+    sortby = request.args.get("sortby")
+    print(sortby)
+    if(sortby == None):
+        sortby = "popular"
+    question = request.args.get("question")
+    if(question == None):
+        question = ""
+    return render_template("index.html", year=year, question=question, sortby=sortby, result=result)
 
 
 # def get_moderation(question):

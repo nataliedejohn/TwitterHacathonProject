@@ -89,6 +89,12 @@ input[type="submit"] {
   text-align: center;
   max-width: 1000px;
 }
+.answer{
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  background-color: moccasin;
+}
+
 #rangeValue {
     position:absolute;
     text-align: center;

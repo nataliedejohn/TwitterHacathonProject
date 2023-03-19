@@ -54,16 +54,16 @@
 
   <header>
     <div class="header">
-      <h1>AMA From Twitter: Blast to the Past</h1>
-      <br>
-      <h3>Choose your time period:</h3>
+      <h1>Twitter Asks</h1>
     </div>
   </header>
 
 <form action="/" method="post">
     <div class="sliderdiv">
-        <span id="rangeValue">1900</span>
-        <input class="range" type="range" value="1950" min="1900" max="2000" name="slider-val"
+        <label for="range">Choose your time period:</label>
+        <br>
+        <span id="rangeValue">{{year}}</span>
+        <input class="range" type="range" value="{{year}}" min="1900" max="2000" name="slider-val"
                onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)"/>
         <br/>
     </div>
@@ -72,11 +72,21 @@
             document.getElementById('rangeValue').innerHTML = value;
         }
     </script>
-    <input type="text" name="question" placeholder="Enter a question" required />
+    <input type="text" name="question" placeholder="Enter a question" value="{{question}}" required />
+    <script>
+    const $select = document.querySelector('#sortby'); $select.value={{sortby}};
+    </script>
+    <label for="sortby">Sort by:</label>
+    <select id="sortby" name="sortby" id="cars" value="{{sortby}}" required>
+      <option value="popular">Popular</option>
+      <option value="mixed">Mixed</option>
+      <option value="recent">Recent</option>
+    </select>
+    <br>
     <input id="submit" type="submit" onclick="document.getElementById('wheel').style.display = 'block';" value="Generate Q&A" />
   </form>
   <br/>
-  <img class="wheel" src="{{ url_for('static', filename='wheel.gif') }}"/>
+  <img class='wheel' src="{{ url_for('static', filename='wheel.gif') }}"/>
   {% if result %}
   <div class="result">{{ result|safe }}</div>
   {% endif %}

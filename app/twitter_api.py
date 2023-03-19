@@ -23,17 +23,15 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-def twitter_api_call(search = "", weird=False):
-    type = "popular"
-    if(True):
-        type = "mixed"
+def twitter_api_call(search = "", mode="popular"):
     public_tweets = api.search_tweets(
         q=search+"?",
         locale="en-us",
-        result_type=type,
-        until=(datetime.today() - timedelta(days = 1)).strftime('%Y-%m-%d'),
+        result_type=mode,
+        until=datetime.today().strftime('%Y-%m-%d'),
         include_entities=True,
-        tweet_mode="extended"
+        tweet_mode="extended",
+        lang = "en"
     )
 
     #columns = ["Time\t", 'User\t', 'Tweet\t']
