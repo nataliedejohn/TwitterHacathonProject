@@ -26,8 +26,9 @@ def generate_prompt(question, year):
     formatted_question = f'{question_phrase} \n {question}'
     return formatted_question
 
-def gpt_thread(question, year, array):
-    print("starting thread")
+def gpt_thread(question, year, url, array):
+    print("starting thread: "+question)
+
     array.append("Question: " +question+ "\n<br/>Answer:"+openai.Completion.create(
             model="text-davinci-003",
             prompt=generate_prompt(question, year),
@@ -40,7 +41,7 @@ def gpt(questions, year):
     array = []
     threads = []
     for item in questions:
-        t = Thread(target=gpt_thread, args=[item, year, array])
+        t = Thread(target=gpt_thread, args=[item[0], year, "", array])
         t.start()
         threads.append(t)
     for thread in threads:
