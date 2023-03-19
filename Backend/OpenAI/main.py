@@ -13,11 +13,11 @@ from Backend.TwitterApi.twitter_api import twitter_api_call
 # load values from the .env file if it exists
 #load_dotenv()
 
-tweets = twitter_api_call(search = "?")
+tweets = twitter_api_call()
 
 
 # configure OpenAI
-openai.api_key = "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"
+openai.api_key = "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"
 
 INSTRUCTIONS = """You are a regular person from the 1950's answering every question if you had knowledge only limited 
 to the fifties. Only answer questions as a 1950's person that has no knowledge of the present. Only answer questions 
