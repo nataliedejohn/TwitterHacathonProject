@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53ee0aa5-dee7-417a-af56-51219a95c595" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/.idea/blog.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/openai-quickstart-python" beforeDir="false" afterPath="$PROJECT_DIR$/blog/openai-quickstart-python" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/openai-quickstart-python/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/blog/openai-quickstart-python/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/openai-quickstart-python/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/blog/openai-quickstart-python/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/openai-quickstart-python/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/blog/openai-quickstart-python/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/openai-quickstart-python/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/blog/openai-quickstart-python/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/openai-quickstart-python/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/openai-quickstart-python/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/openai-quickstart-python/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/blog/openai-quickstart-python/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/openai-quickstart-python/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/blog/openai-quickstart-python/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/openai-quickstart-python/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/openai-quickstart-python/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/blog/openai-quickstart-python" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -84,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1679180932537</updated>
       <workItem from="1679180937034" duration="158000" />
-      <workItem from="1679181190649" duration="14570000" />
+      <workItem from="1679181190649" duration="14923000" />
     </task>
     <servers />
   </component>
