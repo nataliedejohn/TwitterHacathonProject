@@ -1,12 +1,12 @@
-import openai
 #from dotenv import load_dotenv
 from flask import Flask, redirect, render_template, request, url_for
 
 from twitter_api import *
+from threadgen import *
 
 app = Flask(__name__)
 #load_dotenv()
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route("/", methods=("GET", "POST"))
@@ -14,6 +14,8 @@ def index():
     if request.method == "POST":
         question = request.form["question"]
         year = request.form["year"]
+
+        print(year)
         # errors = get_moderation(question)
         # if errors:
         #     for error in errors:
@@ -21,14 +23,11 @@ def index():
         #     return render_template("index.html", result="Sorry, I cannot answer that question.")
         twitterList = twitter_api_call(search=question)
 
-        print(twitterList)
+        print(twitterList[0:5])
 
-        response = "Question: "+twitterList[0]+"\n\n"+openai.Completion.create(
-                model="text-davinci-003",
-                prompt=generate_prompt(twitterList[0], 1960),
-                temperature=0.6,
-                max_tokens=100
-            ).choices[0].text
+        response = ""
+        for item in gpt(twitterList[0:5], year):
+            response = response + item + "<br/> <br/> <br/>"
 
         print(response)
         return redirect(url_for("index", result=response))
@@ -65,24 +64,6 @@ def index():
 #         ]
 #         return result
 #     return None
-
-
-def generate_prompt(question, year):
-    question_phrase = """You are a regular person from the {year}s. 
-    Answer every question as if you had knowledge only limited to January 23rd, {year}.
-    The day is January 23rd, {year}.
-    You do not know about anything that happened or was invented after January 23rd, {year}.
-    If something was invented after January 23rd, 1959, answer as if you do not know what they are talking about.
-    Only answer questions with {year}'s rhetoric.
-    Please aim to be as helpful, creative, and friendly as possible in all of your responses.
-    Do not use any external URLs in your answers. Do not refer to any blogs in your answers.
-    Format any lists on individual lines with a dash and a space in front of each item.
-    Your name is Vinny. You live in Louisiana and speak with a Southern accent.
-    You graduated from Harvard University.
-    You believe the earth is flat.
-    """.format(year=year)
-    formatted_question = f'{question_phrase} \n {question}'
-    return formatted_question
 
 
 if __name__ == "__main__":

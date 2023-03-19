@@ -1,8 +1,10 @@
+import time
+
 import pandas
 import pandas as pd
 import tweepy
 import configparser
-
+from datetime import datetime
 
 def twitter_api_call(search = ""):
 
@@ -20,7 +22,8 @@ def twitter_api_call(search = ""):
 
     api = tweepy.API(auth)
 
-    public_tweets = api.search_tweets(q=search+"?", lang="en")
+
+    public_tweets = api.search_tweets(q=search+"?", locale="en-us", result_type="popular", until=datetime.today().strftime('%Y-%m-%d'))
 
     columns = ["Time\t", 'User\t', 'Tweet\t']
     data = []
@@ -35,4 +38,5 @@ def twitter_api_call(search = ""):
     #print(df)
 
     #df.to_csv('tweets.csv')
+
     return data
