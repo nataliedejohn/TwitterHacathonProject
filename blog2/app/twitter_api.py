@@ -25,13 +25,14 @@ def twitter_api_call(search = ""):
     columns = ["Time\t", 'User\t', 'Tweet\t']
     data = []
     for tweet in public_tweets:
-        data.append([tweet.created_at, tweet.user.screen_name, tweet.text])
+        data.append(tweet.text)
+        #data.append([tweet.created_at, tweet.user.screen_name, tweet.text])
 
-    print("data: {data}".format(data=data))
+    #print("data: {data}".format(data=data))
 
-    df = pd.DataFrame(data, columns=columns)
+    #df = pd.DataFrame(data, columns=columns)
 
-    print(df)
+    #print(df)
 
-    df.to_csv('tweets.csv')
+    #df.to_csv('tweets.csv')
     return data

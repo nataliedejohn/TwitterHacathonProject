@@ -6,13 +6,14 @@ from twitter_api import *
 
 app = Flask(__name__)
 #load_dotenv()
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route("/", methods=("GET", "POST"))
 def index():
     if request.method == "POST":
         question = request.form["question"]
+        year = request.form["year"]
         # errors = get_moderation(question)
         # if errors:
         #     for error in errors:
@@ -20,15 +21,17 @@ def index():
         #     return render_template("index.html", result="Sorry, I cannot answer that question.")
         twitterList = twitter_api_call(search=question)
 
-        responses = []
-        for item in twitterList:
-            responses.append([item, openai.Completion.create(
+        print(twitterList)
+
+        response = "Question: "+twitterList[0]+"\n\n"+openai.Completion.create(
                 model="text-davinci-003",
-                prompt=generate_prompt(item),
+                prompt=generate_prompt(twitterList[0], 1960),
                 temperature=0.6,
                 max_tokens=100
-            ).choices[0].text])
-        return redirect(url_for("index", result=responses))
+            ).choices[0].text
+
+        print(response)
+        return redirect(url_for("index", result=response))
     result = request.args.get("result")
     return render_template("index.html", result=result)
 
@@ -64,7 +67,7 @@ def index():
 #     return None
 
 
-def generate_prompt(question):
+def generate_prompt(question, year):
     question_phrase = """You are a regular person from the {year}s. 
     Answer every question as if you had knowledge only limited to January 23rd, {year}.
     The day is January 23rd, {year}.
@@ -77,7 +80,7 @@ def generate_prompt(question):
     Your name is Vinny. You live in Louisiana and speak with a Southern accent.
     You graduated from Harvard University.
     You believe the earth is flat.
-    """.format(year=1959)
+    """.format(year=year)
     formatted_question = f'{question_phrase} \n {question}'
     return formatted_question
 
