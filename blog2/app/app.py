@@ -6,7 +6,7 @@ from threadgen import *
 
 app = Flask(__name__)
 #load_dotenv()
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route("/", methods=("GET", "POST"))

@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53ee0aa5-dee7-417a-af56-51219a95c595" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/blog2/app/static/wheel.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog2/app/threadgen.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog2/app/threadgen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog2/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog2/app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog2/app/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/blog2/app/static/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog2/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog2/app/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +53,7 @@
       <recent name="$PROJECT_DIR$/Backend/TwitterApi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\roadk\Downloads\TwitterHackathonProject\blog2\app\static" />
       <recent name="C:\Users\roadk\Downloads\TwitterHackathonProject\blog2\openai-quickstart-python" />
       <recent name="$PROJECT_DIR$/Backend/OpenAI" />
     </key>

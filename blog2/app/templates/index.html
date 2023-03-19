@@ -13,9 +13,12 @@
   <form action="/" method="post">
     <input type="text" name="year" placeholder="1960"/>
     <input type="text" name="question" placeholder="Enter a question" required />
-    <input type="submit" value="Generate Answer" />
+    <input id="submit" type="submit" onclick="document.getElementById("wheel").style.display = "block";" value="Generate Answer" />
   </form>
+  <br/>
+  <img class="wheel" src="{{ url_for('static', filename='wheel.gif') }}"/>
   {% if result %}
   <div class="result">{{ result|safe }}</div>
+
   {% endif %}
 </body>
