@@ -27,7 +27,8 @@ def generate_prompt(question, year):
     return formatted_question
 
 def gpt_thread(question, year, array):
-    array.append("Question: " +question+ "\n<br/><br/><br/>Answer:" + openai.Completion.create(
+    print("starting thread")
+    array.append("Question: " +question+ "\n<br/>Answer:" + openai.Completion.create(
         model="text-davinci-003",
         prompt=generate_prompt(question, year),
         temperature=0.6,
